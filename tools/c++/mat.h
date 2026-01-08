@@ -181,6 +181,7 @@ public:
 				mat.data[i][j].second = (T)vals[j];
 			}
 		}	
+			return fin;
 	}
 
 	SMat(string fname)
@@ -458,7 +459,7 @@ public:
 		_int nc = mat.nc;
 		_int nr = mat.nr;
 		_int* size = mat.size;
-		pairIF** data = mat.data;
+		pair<_int,T>** data = mat.data;
 
 		fout<<nc<<" "<<nr<<endl;
 
@@ -474,6 +475,7 @@ public:
 			}
 			fout<<endl;
 		}
+		return fout;
 	}
 
 	void write(string fname)

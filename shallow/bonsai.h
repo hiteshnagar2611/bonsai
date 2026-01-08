@@ -24,6 +24,7 @@ that is an internal node can have mutiple children
 #include <functional>
 #include <unordered_set>
 #include <unordered_map>
+#include <fstream>
 
 #include <cstdio>
 #include <cstring>
@@ -90,7 +91,7 @@ class Node
     _float ram = 0;
     ram += sizeof( Node );
     ram += sizeof( _int ) * Y.capacity();
-    ram += w->get_ram();
+    if (w) ram += w->get_ram();
     return ram;
   }
 
@@ -113,6 +114,7 @@ class Node
     fout << "\n";
 
     fout << (*node.w);
+    return fout;
   }
 
   friend istream& operator>>( istream& fin, Node& node )
@@ -155,6 +157,7 @@ class Node
 
     node.w = new SMatF;
     fin >> (*node.w);
+    return fin;
   } 
 };
 
