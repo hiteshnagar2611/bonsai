@@ -1,7 +1,6 @@
-#! /bin/zsh
+#!/usr/bin/env bash
 
-datasets=(eurlex)
-
+datasets=(eurlex4k)
 
 for dataset in ${datasets}; do
     echo ${dataset}

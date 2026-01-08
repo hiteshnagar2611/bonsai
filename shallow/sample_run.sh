@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dataset="eurlex"
+dataset="eurlex4k"
 data_dir="../sandbox/data/$dataset"
 results_dir="../sandbox/results/$dataset"
 model_dir="../sandbox/results/$dataset/model"
@@ -46,5 +46,5 @@ mkdir -p $model_dir
 #fi
 
 # performance evaluation 
-matlab -nodesktop -nodisplay -r "cd('$PWD'); addpath(genpath('../tools')); trn_X_Y = read_text_mat('$trn_lbl_file'); tst_X_Y = read_text_mat('$tst_lbl_file'); wts = inv_propensity(trn_X_Y,0.55,1.5); score_mat = read_text_mat('$score_file'); get_all_metrics(score_mat, tst_X_Y, wts); exit;"
+#matlab -nodesktop -nodisplay -r "cd('$PWD'); addpath(genpath('../tools')); trn_X_Y = read_text_mat('$trn_lbl_file'); tst_X_Y = read_text_mat('$tst_lbl_file'); wts = inv_propensity(trn_X_Y,0.55,1.5); score_mat = read_text_mat('$score_file'); get_all_metrics(score_mat, tst_X_Y, wts); exit;"
 
